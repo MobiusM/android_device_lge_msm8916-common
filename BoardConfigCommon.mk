@@ -97,10 +97,6 @@ BOARD_USES_QCOM_HARDWARE := true
 # Recovery
 TARGET_USERIMAGES_USE_EXT4 := true
 
-# Radio
-BOARD_RIL_CLASS := ../../../device/lge/msm8916-common/ril/
-TARGET_RELEASE_CPPFLAGS += -DNEEDS_LGE_RIL_SYMBOLS
-
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
 #BOARD_SEPOLICY_DIRS += device/lge/msm8916-common/sepolicy
@@ -108,6 +104,11 @@ include device/qcom/sepolicy/sepolicy.mk
 
 # Time services
 BOARD_USES_QC_TIME_SERVICES := true
+
+# RIL
+BOARD_GLOBAL_CFLAGS += -DUSE_RIL_VERSION_10
+BOARD_GLOBAL_CPPFLAGS += -DUSE_RIL_VERSION_10
+TARGET_RIL_VARIANT := caf
 
 # Wifi
 BOARD_HAS_QCOM_WLAN := true
