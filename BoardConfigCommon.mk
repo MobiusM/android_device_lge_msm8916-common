@@ -29,6 +29,9 @@ TARGET_BOARD_SUFFIX := _32
 TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
 TARGET_CPU_VARIANT := cortex-a7
+USE_CLANG_PLATFORM_BUILD := true
+BOARD_GLOBAL_CFLAGS += -mfpu=neon -mfloat-abi=softfp
+BOARD_GLOBAL_CPPFLAGS += -mfpu=neon -mfloat-abi=softfp
 
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := msm8916
